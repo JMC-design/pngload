@@ -20,11 +20,11 @@ See LOAD-STREAM if you want to load a PNG datastream.
                             :flatten flatten
                             :flip-y flip-y
                             :use-static-vector static-vector
-			    :unknown-chunk-warnings unknown-chunk-warnings))
-	 (png (make-png :state state))
-	 (source (make-instance 'octet-vector-source
-				:data vector
-				:end (array-dimension vector 0))))
+                            :unknown-chunk-warnings unknown-chunk-warnings))
+         (png (make-png :state state))
+         (source (make-instance 'octet-vector-source
+                                :data vector
+                                :end (array-dimension vector 0))))
     (setf (state-source (state png)) source
-	  (parse-tree png) (parse-datastream png))
+          (parse-tree png) (parse-datastream png))
     png))
